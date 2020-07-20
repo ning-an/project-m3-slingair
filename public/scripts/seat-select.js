@@ -59,11 +59,11 @@ const toggleFormContent = () => {
 const handleConfirmSeat = (event) => {
   event.preventDefault();
   // TODO: everything in here!
-  fetch("/confirmed", {
+  fetch("/users", {
     method: "POST",
     body: JSON.stringify({
-      flightNumber: flightNumber,
-      seatNumber: selection,
+      flight: flightNumber,
+      seat: selection,
       givenName: document.getElementById("givenName").value,
       surname: document.getElementById("surname").value,
       email: document.getElementById("email").value,
@@ -72,9 +72,11 @@ const handleConfirmSeat = (event) => {
       Accept: "application/json",
       "Content-Type": "application/json",
     },
-  }).then(
-    () => (window.location.href = "/confirmed"),
-    (err) => console.log(err)
+  }).then(res => res.json())
+  .then(res => {
+      window.location.replace(`/confirmed/${res.id}`);
+    },
+    err => console.log(err)
   );
 };
 

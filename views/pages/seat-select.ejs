@@ -4,7 +4,7 @@
         <select name="flight" id="flight" class='flight'>
             <option value="" disabled selected>Select your flight</option>
             <% flightNumbers.forEach( flight => { %> 
-                <option value="<%= flight %> "><%= flight %> </option>
+                <option value="<%= flight %>"><%= flight %></option>
             <% }); %> 
         </select>
     </div>
@@ -34,4 +34,7 @@
             </div>
         </form>
     </div>
-<%- include('../partials/footer') %> 
+</div>
+<script src='/scripts/seat-select.js'></script>
+</body>
+</html>

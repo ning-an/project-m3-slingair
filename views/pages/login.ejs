@@ -1,0 +1,20 @@
+<%- include('../partials/header') %> 
+<div class='login-form-container content'>
+    <form class='login-form customerForm' onsubmit="customerSignin()">
+        <h2>Customer</h2>
+        <label for="email">Email: </label>
+        <input type="email" id='email' name='email' placeholder="Your email">
+        <button class='button confirm'>View Reservation</button>
+    </form>
+    <form class='login-form' onsubmit='adminSignin()'>
+        <h2>Admin</h2>
+        <label for="password">Security Code: </label>
+        <input type="password" id='password' name='password' placeholder="security code">
+        <button class='button confirm'>LOG IN</button>
+    </form>
+</div>
+
+</div>
+<script src='/scripts/login.js'></script>
+</body>
+</html>

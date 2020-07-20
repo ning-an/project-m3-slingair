@@ -24,7 +24,18 @@ main {
     background: var(--alabama-crimson);
     height: 120px;
     padding: var(--page-padding) 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
+
+a {
+    text-decoration: none;
+    font-family: var(--heading-font) !important;
+    color: white;
+    font-size: 32px;
+}
+
 .content {
     flex: 1 0 auto;
     height: 100%;
@@ -262,3 +273,18 @@ input {
 }
 
 .form-container { display: none; }
+
+.login-form-container {
+    height: 35vh;
+    border: 3px solid var(--alabama-crimson);
+    margin-top: 20%;
+}
+
+.login-form {
+    flex-basis: 40%;
+    padding: 40px
+}
+
+.customerForm {
+    border-right: 3px solid var(--alabama-crimson);
+}

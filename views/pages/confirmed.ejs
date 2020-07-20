@@ -3,12 +3,14 @@
     <div class="user">
         <p class="message">Your flight is confirmed!</p>
         <ul class="user-info">
-            <li>Flight #:<span id="flight"><%= flightNumber %> </span> seat #: <span id="seat"><%= seatNumber %> </span></li>
+            <li>Flight #:<span id="flight"><%= flight %> </span> seat #: <span id="seat"><%= seat %> </span></li>
             <li>Name:<span id="name"><%= givenName %> <%= surname %> </span></li>
-            <li>Email:<span id="email"><%= email %> </span></li>
+            <li>Email:<span id="email"><%= email %></span></li>
         </ul>
     </div>
     <div class="tombstone"></div>
 </div>
 <p class='footer-logo'>The only way to fly!</p>
-<%- include('../partials/footer') %> 
+</div>
+</body>
+</html>

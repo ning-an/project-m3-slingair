@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const cors = require('cors');
 const { flights } = require('./test-data/flightSeating');
-const { getSeatSelect, getFlight } = require('./public/handlers')
+const { getSeatSelect, getFlight, confirmSeat, confirmPage, login, viewReservation } = require('./public/handlers')
 
 express()
   .use(function (req, res, next) {
@@ -26,25 +26,11 @@ express()
   // endpoints
   .get('/seat-select', getSeatSelect)
   .get('/flights/:flightNumber', getFlight)
+  .post('/users', confirmSeat)
+  .get('/confirmed/:id', confirmPage)
+  .get('/login', login)
+  .post('/view-reservation', viewReservation)
 
-
-
-
-
-  .post('/confirmed', (req, res) => {
-    console.log('open up confirmed page iiiiiiiiiiiinnnnnnnnngggggg')
-    const { flightNumber, seatNumber, givenName, surname, email } = req.body;
-    res.status(200).render('pages/confirmed', {
-      title: 'Confirmed',
-      flightNumber, seatNumber, givenName, surname, email
-    })
-  })
-  .get('/view-reservation', (req, res) => {
-    res.status(200).render('pages/view-reservation', {
-      title: 'Reservation',
-      jsSource: '/scripts/view-reservation.js'
-    })
-  })
   .get('/flights/:flightNumber', (req, res) => {
     const { flightNumber } = req.params;
     res.status(200).json(flights[flightNumber])
