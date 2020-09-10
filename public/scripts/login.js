@@ -10,11 +10,10 @@ const customerSignin = () => {
         headers: {
             Accept: "application/json",
             "Content-Type": "application/json",
-          },
+        },
     }).then(res => res.json())
     .then(res => {
         window.location.replace(`/confirmed/${res.id}`);
-        document.getElementById('profile').innerText = res.givenName;
     })
     .catch(err => {console.log(err)})
 }

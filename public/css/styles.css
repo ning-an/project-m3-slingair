@@ -36,6 +36,11 @@ a {
     font-size: 32px;
 }
 
+a.disabled {
+    pointer-events: none;
+    cursor: default;
+}
+
 .content {
     flex: 1 0 auto;
     height: 100%;
